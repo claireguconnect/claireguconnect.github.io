@@ -1,0 +1,181 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.resume-modal[hidden] {
+  display: none;
+}
+
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.resume-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.7);
+  backdrop-filter: blur(7px);
+}
+
+.resume-dialog {
+  position: relative;
+  width: min(560px, 100%);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+}
+
+.resume-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 400 30px/1 "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.resume-kicker {
+  margin: 0 0 52px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.resume-dialog h2 {
+  max-width: 440px;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 66px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.resume-dialog > p:not(.resume-kicker) {
+  max-width: 430px;
+  margin: 24px 0 34px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.resume-dialog label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.resume-form-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.resume-form-row input {
+  min-width: 0;
+  height: 52px;
+  border: 1px solid var(--ink);
+  border-right: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0 15px;
+  color: var(--ink);
+  font: 500 15px "DM Sans", Arial, sans-serif;
+  outline: none;
+}
+
+.resume-form-row input:focus {
+  box-shadow: inset 0 0 0 2px var(--red);
+}
+
+.resume-form-row button {
+  height: 52px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  padding: 0 20px;
+  font: 600 12px "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.resume-form-row button:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.resume-form-row button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.resume-privacy {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.resume-status {
+  min-height: 18px;
+  margin: 10px 0 0;
+  color: #a02f20;
+  font-size: 11px;
+}
+
+.resume-decline {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: 500 11px "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .resume-modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  .resume-dialog {
+    width: 100%;
+    padding: 34px 22px 28px;
+  }
+
+  .resume-kicker {
+    margin-bottom: 38px;
+  }
+
+  .resume-dialog h2 {
+    font-size: 46px;
+  }
+
+  .resume-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-form-row input {
+    border-right: 1px solid var(--ink);
+    border-bottom: 0;
+  }
+
+  .resume-form-row button {
+    width: 100%;
+  }
+}
